@@ -1,0 +1,163 @@
+/* Selection Style */
+/* ::selection {
+	background: #fd0b58;
+	color: #fff;
+}
+::-moz-selection {
+	background: #fd0b58;
+	color: #fff;
+} */
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Permanent Marker";
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav {
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
+  position: relative;
+  background: #0d0d0d;
+}
+
+.aside {
+	grid-area: sidebar;
+}
+
+footer {
+	grid-area: footer;
+}
+
+.container {
+  display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+	grid:
+		"header"
+		"main"
+		/ 1fr;
+	min-height: 100vh;
+}
+
+nav {
+	padding: 1em;
+}
+
+h1 {
+	font-size: 40px;
+  text-align: center;
+}
+
+.inspiration {
+	display: grid;
+	grid-template-columns: 1fr;
+	height: 100%;
+	grid-gap: 1em;
+	padding: 1em;
+  max-width: 100vw;
+}
+
+@media screen and (min-width: 800px) {
+	.inspiration {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.inspiration {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+.inspiration .box1 {
+	background: rgba(0,0,0,.2);
+	position: relative;
+}
+
+.inspiration .box1:before {
+	display: block;
+	content: '';
+		width: 100%;
+	padding-top: calc((9 / 16) * 100%);
+}
+
+.inspiration .box1 span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: none;
+}
+
+.logo.mobile {
+  display: block;
+}
+
+@media screen and (min-width: 1000px) {
+  .logo {
+    display: block;
+  }
+  .logo.mobile {
+    display: none;
+  }
+}
+
+.logo h2 {
+  font-size: 30px;
+  padding-top: 6px;
+}
+
+.fixed-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  clip: rect(0, auto, auto, 0);
+  width: fit-content;
+  height: 100%;
+  font-size: 30px;
+  padding: 20px 0 0 20px;
+  text-indent: -99999999px;
+}
+
+.fixed-container h2 {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 26px 20px 20px;
+  font-size: 30px;
+  text-indent: 0;
+}
+
+.fixed-container h2:hover {
+  cursor: pointer;
+}
