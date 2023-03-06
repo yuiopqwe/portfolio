@@ -107,32 +107,10 @@ h1 {
   background-repeat: no-repeat !important;
 }
 
-.logo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  display: none;
-}
 
-.logo.mobile {
-  display: block;
-}
 
 @media screen and (min-width: 1000px) {
-  .logo {
-    display: block;
-  }
-  .logo.mobile {
-    display: none;
-  }
-}
-
-.logo h2 {
-  font-size: 30px;
-  padding-top: 6px;
-}
+ 
 
 .fixed-container {
   position: absolute;
