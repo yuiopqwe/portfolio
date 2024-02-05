@@ -44,6 +44,35 @@
     <footer>
         <p>&copy; 2024 Your Portfolio. All Rights Reserved.</p>
     </footer>
+    
+<!-- JavaScript 코드 추가 -->
+    <script>
+        // 페이지 상단으로 스크롤하는 버튼
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 내비게이션 메뉴 클릭 시 부드러운 스크롤링
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
