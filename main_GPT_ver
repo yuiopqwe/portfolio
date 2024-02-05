@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- 여기에 필요한 스타일 시트 링크 추가 가능 -->
+    <!-- 예: <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* 여기에 인라인 스타일 추가 가능 */
+        /* 예: body { background-color: #f4f4f4; } */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <nav>
+        <!-- 네비게이션 메뉴 추가 가능 -->
+        <!-- 예: <ul><li><a href="#about">About Me</a></li></ul> -->
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Write a brief introduction about yourself here.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <!-- 프로젝트 목록 추가 가능 -->
+        <!-- 예: <div class="project"><h3>Project Title</h3><p>Description...</p></div> -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+        <p>LinkedIn: linkedin.com/in/yourname</p>
+        <!-- 다른 연락 수단 추가 가능 -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
