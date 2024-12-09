@@ -44,7 +44,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url("/img/zombie_slide.png");
+  background: url("img/zombie_slide.png");
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%; 
