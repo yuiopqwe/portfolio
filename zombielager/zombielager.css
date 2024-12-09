@@ -44,7 +44,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url("/themes/lager/img/zombie/zombie_slide.png");
+  background: url("/themes/lager/img/zombie_slide.png");
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%; 
@@ -153,9 +153,9 @@
 .reg_sm_tit p{color:#fff; font-size:34px;}
 .zombie_reg_step { display:none;}
 .zombie_reg_step.open { display:block;}
-.zombie_reg_step .zombie_reg_inner {  position: relative; padding:100px 5% 120px; background:url('/themes/lager/img/zombie/zombie_reg_bg_con.png') repeat-y center; background-size:100%;}
-.zombie_reg_step .zombie_reg_inner::before { content:""; position: absolute; left:0; top:0; padding-bottom:7.036%; width:100%; background:url('/themes/lager/img/zombie/zombie_reg_bg_top.png') no-repeat center; background-size:100%;}
-.zombie_reg_step .zombie_reg_inner::after { content:""; position: absolute; left:0; bottom:0; padding-bottom:3.753%; width:100%; background:url('/themes/lager/img/zombie/zombie_reg_bg_btm.png') no-repeat center; background-size:100%;}
+.zombie_reg_step .zombie_reg_inner {  position: relative; padding:100px 5% 120px; background:url('/img/zombie_reg_bg_con.png') repeat-y center; background-size:100%;}
+.zombie_reg_step .zombie_reg_inner::before { content:""; position: absolute; left:0; top:0; padding-bottom:7.036%; width:100%; background:url('/img/zombie_reg_bg_top.png') no-repeat center; background-size:100%;}
+.zombie_reg_step .zombie_reg_inner::after { content:""; position: absolute; left:0; bottom:0; padding-bottom:3.753%; width:100%; background:url('/img/zombie_reg_bg_btm.png') no-repeat center; background-size:100%;}
 .zombie_reg_step .reg_btn { margin:70px 0 0;}
 .zombie_reg_step .reg_btn > * {display:inline-block; margin:0 2%; max-width:30%;}
 .zombie_reg_step#step01 .reg_btn { margin:0;}
