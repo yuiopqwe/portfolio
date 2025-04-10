@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   <!-- 1. Lottie Player 불러오기 -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- 2. Lottie Interactivity 불러오기 (이걸 놓치면 LottieInteractivity가 정의되지 않음!) -->
 <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+
 
 </head>
 <body>
@@ -25,8 +29,8 @@
   lottie.loadAnimation({
     container: document.getElementById('lottie-container'), // 애니메이션이 들어갈 div
     renderer: 'svg',
-    loop: true,
-    autoplay: true,
+    loop: false,
+    autoplay: false,
     path: 'https://yuiopqwe.github.io/portfolio/json/1.json' // JSON 애니메이션 파일 경로
   });
 </script>
