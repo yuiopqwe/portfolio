@@ -14,42 +14,30 @@
 
 </head>
 <body>
-  <div id="lottie-container" style="width:393px; height:852px;"></div> 
+  
+  <!-- Lottie 애니메이션 플레이어 -->
   <lottie-player
-  id="firstLottie"
-  src="https://yuiopqwe.github.io/portfolio/json/1.json"
-  background="transparent"
-  speed="1"
-  style="width: 393px; height: 852px;"
-  loop
-  autoplay
-></lottie-player>
+    id="firstLottie"
+    src="https://yuiopqwe.github.io/portfolio/json/1.json"
+    background="transparent"
+    speed="1"
+    style="width: 393px; height: 852px;">
+  </lottie-player>
+
 </body>
-<script>
-  lottie.loadAnimation({
-    container: document.getElementById('lottie-container'), // 애니메이션이 들어갈 div
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: 'https://yuiopqwe.github.io/portfolio/json/1.json' // JSON 애니메이션 파일 경로
-  });
-</script>
+
 <script>
   LottieInteractivity.create({
-    player: '#thirdLottie',
+    player: '#firstLottie',
     mode: 'scroll',
     actions: [
       {
-          visibility: [0, 0.3],
-          type: "stop",
-          frames: [50]
+        visibility: [0, 1],
+        type: 'seek',
+        frames: [0, 300],
       },
-      {
-          visibility: [0.3, 1.0],
-          type: "seek",
-          frames: [50, 240]
-      }
     ]
   });
 </script>
+
 </html>
