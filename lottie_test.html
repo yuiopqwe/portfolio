@@ -4,29 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
 </head>
 <body>
-    <lottie-player id="firstLottie" src="https://assets2.lottiefiles.com/packages/lf20_i9mxcD.json" style="width:400px; height: 400px;"></lottie-player>
-    <lottie-player 
-    src="/json/1.json" 
-    background="transparent" 
-    speed="1" 
-    style="width: 300px; height: 300px;" 
-    autoplay>
- </lottie-player>  
+  <div id="lottie-container" style="width:393px; height:852px;"></div> 
 </body>
 <script>
-    LottieInteractivity.create({
-      player: '#firstLottie',
-      mode: 'scroll',
-      actions: [
-        {
-          visibility: [0,1],
-          type: 'seek',
-          frames: [0, 300],
-        },
-      ]
-    });
-  </script>
+  lottie.loadAnimation({
+    container: document.getElementById('lottie-container'), // 애니메이션이 들어갈 div
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'animation.json' // JSON 애니메이션 파일 경로
+  });
+</script>
 </html>
