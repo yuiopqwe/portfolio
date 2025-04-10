@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <title>스크롤 기반 Lottie 애니메이션</title>
 
-  <!-- ✅ 순서 중요: Lottie Player → Interactivity 라이브러리 순으로 불러오기 -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <!-- ✅ lottie-player 먼저 -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+
+  <!-- ✅ lottie interactivity 그다음 -->
+  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js" defer></script>
 
   <style>
     body {
-      height: 200vh; /* 스크롤 충분히 확보 */
+      height: 200vh;
     }
     #firstLottie {
       margin: 150px auto;
@@ -22,7 +24,6 @@
 </head>
 <body>
 
-  <!-- ✅ autoplay, loop 제거 -->
   <lottie-player
     id="firstLottie"
     src="https://yuiopqwe.github.io/portfolio/json/1.json"
@@ -31,9 +32,14 @@
     style="width: 300px; height: 300px;">
   </lottie-player>
 
-  <!-- ✅ 반드시 interactivity 스크립트 아래에서 실행 -->
+  <!-- ✅ 실행은 페이지 완전히 로드된 후로 미룸 -->
   <script>
-    window.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("load", function () {
+      if (typeof LottieInteractivity === "undefined") {
+        console.error("❌ LottieInteractivity가 아직 로드되지 않았습니다!");
+        return;
+      }
+
       LottieInteractivity.create({
         player: "#firstLottie",
         mode: "scroll",
