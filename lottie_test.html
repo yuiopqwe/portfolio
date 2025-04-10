@@ -2,17 +2,16 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>Lottie 스크롤 애니메이션</title>
+  <title>Lottie 스크롤 테스트</title>
 
-  <!-- ✅ 순서 중요: lottie-player → interactivity -->
+  <!-- ✅ Lottie player + Interactivity (중복 금지) -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
   <style>
     body {
-      height: 200vh; /* 스크롤 여유 */
+      height: 200vh;
     }
-
     #firstLottie {
       display: block;
       margin: 150px auto;
@@ -23,7 +22,7 @@
 </head>
 <body>
 
-  <!-- ✅ autoplay, loop 빼고 src 경로 정확히 지정 -->
+  <!-- ✅ 오직 1개만 정의 -->
   <lottie-player
     id="firstLottie"
     src="https://yuiopqwe.github.io/portfolio/json/1.json"
@@ -32,18 +31,23 @@
     style="width: 300px; height: 300px;">
   </lottie-player>
 
-  <!-- ✅ 반드시 두 스크립트 아래에서 실행되어야 함 -->
   <script>
-    LottieInteractivity.create({
-      player: "#firstLottie",
-      mode: "scroll",
-      actions: [
-        {
-          visibility: [0, 1],
-          type: "seek",
-          frames: [0, 300],
-        },
-      ],
+    window.addEventListener("DOMContentLoaded", function () {
+      if (typeof LottieInteractivity !== "undefined") {
+        LottieInteractivity.create({
+          player: "#firstLottie",
+          mode: "scroll",
+          actions: [
+            {
+              visibility: [0, 1],
+              type: "seek",
+              frames: [0, 300],
+            },
+          ],
+        });
+      } else {
+        console.error("❌ LottieInteractivity가 로드되지 않았습니다.");
+      }
     });
   </script>
 
