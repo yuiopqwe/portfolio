@@ -1,53 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <!-- 1. Lottie Player 불러오기 -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <meta charset="UTF-8" />
+  <title>스크롤 기반 Lottie 애니메이션</title>
 
-<!-- 2. Lottie Interactivity 불러오기 (이걸 놓치면 LottieInteractivity가 정의되지 않음!) -->
-<script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <!-- ✅ 순서 중요: Lottie Player → Interactivity 라이브러리 순으로 불러오기 -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
-<style>
-  body {
-    height: 200vh;
-  }
-  #firstLottie {
-    display: block;
-    margin: 100px auto;
-    width: 393px;
-    height: 852px;
-  }
-</style>
-
+  <style>
+    body {
+      height: 200vh; /* 스크롤 충분히 확보 */
+    }
+    #firstLottie {
+      margin: 150px auto;
+      display: block;
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </head>
 <body>
-  
-  <!-- Lottie 애니메이션 플레이어 -->
+
+  <!-- ✅ autoplay, loop 제거 -->
   <lottie-player
     id="firstLottie"
     src="https://yuiopqwe.github.io/portfolio/json/1.json"
     background="transparent"
     speed="1"
-    style="width: 393px; height: 852px; background-color: #d42f47;">
+    style="width: 300px; height: 300px;">
   </lottie-player>
 
+  <!-- ✅ 반드시 interactivity 스크립트 아래에서 실행 -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      LottieInteractivity.create({
+        player: "#firstLottie",
+        mode: "scroll",
+        actions: [
+          {
+            visibility: [0, 1],
+            type: "seek",
+            frames: [0, 300],
+          },
+        ],
+      });
+    });
+  </script>
+
 </body>
-
-<script>
-  LottieInteractivity.create({
-    player: '#firstLottie',
-    mode: 'scroll',
-    actions: [
-      {
-        visibility: [0, 1],      // 스크롤 범위 0~100%
-        type: 'seek',            // seek: 스크롤 위치에 따라 프레임 이동
-        frames: [0, 300],        // 전체 애니메이션 프레임 범위
-      },
-    ]
-  });
-</script>
-
 </html>
