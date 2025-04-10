@@ -10,7 +10,17 @@
 <!-- 2. Lottie Interactivity 불러오기 (이걸 놓치면 LottieInteractivity가 정의되지 않음!) -->
 <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
-
+<style>
+  body {
+    height: 200vh;
+  }
+  #firstLottie {
+    display: block;
+    margin: 100px auto;
+    width: 393px;
+    height: 852px;
+  }
+</style>
 
 </head>
 <body>
@@ -20,7 +30,7 @@
     id="firstLottie"
     src="https://yuiopqwe.github.io/portfolio/json/1.json"
     background="transparent"
-    speed="3"
+    speed="1"
     style="width: 393px; height: 852px; background-color: #d42f47;">
   </lottie-player>
 
@@ -32,9 +42,9 @@
     mode: 'scroll',
     actions: [
       {
-        visibility: [0, 1],
-        type: 'seek',
-        frames: [0, 300],
+        visibility: [0, 1],      // 스크롤 범위 0~100%
+        type: 'seek',            // seek: 스크롤 위치에 따라 프레임 이동
+        frames: [0, 300],        // 전체 애니메이션 프레임 범위
       },
     ]
   });
