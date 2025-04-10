@@ -2,35 +2,28 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>스크롤 기반 Lottie 애니메이션</title>
+  <title>Lottie 스크롤 애니메이션</title>
 
-  <!-- ✅ lottie-player 먼저 -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
-
-  <!-- ✅ lottie interactivity 그다음 -->
-  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js" defer></script>
+  <!-- ✅ 순서 중요: lottie-player → interactivity -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
   <style>
     body {
-      height: 200vh;
+      height: 200vh; /* 스크롤 여유 */
     }
+
     #firstLottie {
-      margin: 150px auto;
       display: block;
+      margin: 150px auto;
       width: 300px;
-      height: 100%;
+      height: 300px;
     }
   </style>
 </head>
 <body>
 
-  <!-- lottie-player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-  <!-- lottie interactivity -->
-  <script src="https://unpkg.com/@lottiefiles/interactivity@latest/dist/lottie-interactivity.min.js"></script>
-
-  <!-- 요소 및 실행 코드 -->
+  <!-- ✅ autoplay, loop 빼고 src 경로 정확히 지정 -->
   <lottie-player
     id="firstLottie"
     src="https://yuiopqwe.github.io/portfolio/json/1.json"
@@ -39,7 +32,7 @@
     style="width: 300px; height: 300px;">
   </lottie-player>
 
-  <!-- 실행 코드 (스크립트 로드 후에 위치해야 함!) -->
+  <!-- ✅ 반드시 두 스크립트 아래에서 실행되어야 함 -->
   <script>
     LottieInteractivity.create({
       player: "#firstLottie",
