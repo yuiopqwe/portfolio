@@ -5,6 +5,20 @@ header { background: #1e1e1e; color: white; text-align: center; }
 nav { margin-top: 1rem; }
 nav a { margin: 0 1rem; color: #aaa; text-decoration: none; }
 nav a:hover { color: white; }
-h2 { margin-top: 2rem; }
-.tag { color: #555; font-size: 0.9rem; }
+h2 { font-size: 2em; }
+p{line-height: 140%;}
+section{}
+section{display:flex; gap: 1rem;}
+
+.section.banner{width: 100%; padding: 60px 0; }
+.section.banner .bnCon01 {background-color: #9b0000; }
+
+.tag{display: inline-flex; flex-wrap: wrap; gap: 4px;}
+.tag_txt { width: fit-content; border-radius: 1em; padding:4px 10px 3px; background-color: #ccc;color: #fff; font-size: 0.9rem; }
+.tag_txt.on {background-color: rgb(110, 142, 255);}
+
+.slide .swiper-wrapper{width: 421px; overflow: hidden;}
+.slide .swiper-wrapper .swiper-slide{width: 100%;height: 20em;background-color: #ccc; }
+.slide .swiper-wrapper :nth-child(2).swiper-slide { background-color: aqua;}
+
 .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
